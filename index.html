@@ -6,365 +6,152 @@
 
     <title>Dom's Media Archive</title>
 
-    <link rel="stylesheet" href="styles.css">
-
     <meta
         name="description"
-        content="Dominic's personal archive of movies, TV shows, books, games, music, and more."
+        content="A personal archive of everything Dom has watched, played, read, and loved."
     >
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         HEADER
-         ========================= -->
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container header-inner">
 
-    <header>
-        <nav>
-            <a href="index.html" class="logo">DOM'S MEDIA ARCHIVE</a>
+            <a href="index.html" class="site-title">
+                DOM'S MEDIA ARCHIVE
+            </a>
 
-            <div class="nav-links">
+            <nav class="site-nav">
                 <a href="#currently">Currently</a>
                 <a href="#recently">Recently</a>
                 <a href="#top-rated">Top Rated</a>
                 <a href="#archive">Archive</a>
-            </div>
-        </nav>
+            </nav>
+
+        </div>
     </header>
 
 
-    <!-- =========================
-         MAIN CONTENT
-         ========================= -->
-
+    <!-- HERO -->
     <main>
 
-        <!-- Hero -->
-
         <section class="hero">
+            <div class="container">
 
-            <p class="eyebrow">A PERSONAL MEDIA ARCHIVE</p>
+                <p class="eyebrow">
+                    A personal media archive
+                </p>
 
-            <h1>
-                What I've watched,<br>
-                played, read &amp; loved.
-            </h1>
+                <h1>
+                    What I've watched,<br>
+                    played, read & loved.
+                </h1>
 
-            <p class="hero-description">
-                A running record of the media I've consumed,
-                what I thought about it, and what I'd recommend
-                to someone else.
-            </p>
+                <p class="hero-description">
+                    An ongoing record of the things I've consumed,
+                    what I thought about them, and what I think
+                    you should check out.
+                </p>
 
+            </div>
         </section>
 
 
-        <!-- Currently Consuming -->
+        <!-- CURRENTLY CONSUMING -->
+        <section id="currently" class="media-section">
+            <div class="container">
 
-        <section id="currently">
-
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">RIGHT NOW</p>
-                    <h2>Currently Consuming</h2>
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Right now</p>
+                        <h2>Currently Consuming</h2>
+                    </div>
                 </div>
-            </div>
 
-
-            <div class="media-grid">
-
-                <article class="media-card">
-
-                    <div class="media-placeholder">
-                        TV
-                    </div>
-
-                    <div class="media-card-content">
-
-                        <p class="media-type">TV SHOW</p>
-
-                        <h3>Example Show</h3>
-
-                        <p class="media-meta">
-                            Season 2 · Netflix
-                        </p>
-
-                        <div class="rating">
-                            ★ 8.4
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="media-card">
-
-                    <div class="media-placeholder">
-                        BOOK
-                    </div>
-
-                    <div class="media-card-content">
-
-                        <p class="media-type">BOOK</p>
-
-                        <h3>Example Book</h3>
-
-                        <p class="media-meta">
-                            Currently Reading
-                        </p>
-
-                        <div class="rating">
-                            ★ —
-                        </div>
-
-                    </div>
-
-                </article>
+                <div id="currently-grid" class="media-grid"></div>
 
             </div>
-
         </section>
 
 
-        <!-- Recently Finished -->
+        <!-- RECENTLY FINISHED -->
+        <section id="recently" class="media-section">
+            <div class="container">
 
-        <section id="recently">
-
-            <div class="section-heading">
-
-                <div>
-                    <p class="eyebrow">RECENTLY</p>
-                    <h2>Recently Finished</h2>
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Freshly finished</p>
+                        <h2>Recently Finished</h2>
+                    </div>
                 </div>
 
-                <a href="#archive" class="section-link">
-                    View Archive →
+                <div id="recently-grid" class="media-grid"></div>
+
+            </div>
+        </section>
+
+
+        <!-- TOP RATED -->
+        <section id="top-rated" class="media-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">The good stuff</p>
+                        <h2>Top Rated</h2>
+                    </div>
+                </div>
+
+                <div id="top-rated-list" class="top-rated-list"></div>
+
+            </div>
+        </section>
+
+
+        <!-- ARCHIVE -->
+        <section id="archive" class="archive-section">
+            <div class="container">
+
+                <p class="eyebrow">The whole thing</p>
+
+                <h2>
+                    Eventually, everything<br>
+                    ends up here.
+                </h2>
+
+                <p>
+                    Movies. Television. Books. Games. Music.
+                    Video. Probably more things than I currently
+                    have categories for.
+                </p>
+
+                <a href="#archive" class="archive-button">
+                    Explore the archive
                 </a>
 
             </div>
-
-
-            <div class="media-grid">
-
-                <article class="media-card">
-
-                    <div class="media-placeholder">
-                        TV
-                    </div>
-
-                    <div class="media-card-content">
-
-                        <p class="media-type">TV SHOW</p>
-
-                        <h3>Boy Swallows Universe</h3>
-
-                        <p class="media-meta">
-                            Netflix
-                        </p>
-
-                        <div class="rating">
-                            ★ 8.6
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="media-card">
-
-                    <div class="media-placeholder">
-                        FILM
-                    </div>
-
-                    <div class="media-card-content">
-
-                        <p class="media-type">MOVIE</p>
-
-                        <h3>The Wonderful Story of Henry Sugar</h3>
-
-                        <p class="media-meta">
-                            2023
-                        </p>
-
-                        <div class="rating">
-                            ★ 9.2
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="media-card">
-
-                    <div class="media-placeholder">
-                        TV
-                    </div>
-
-                    <div class="media-card-content">
-
-                        <p class="media-type">TV SHOW</p>
-
-                        <h3>Lovesick</h3>
-
-                        <p class="media-meta">
-                            Netflix
-                        </p>
-
-                        <div class="rating">
-                            ★ 8.0
-                        </div>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- Top Rated -->
-
-        <section id="top-rated">
-
-            <div class="section-heading">
-
-                <div>
-                    <p class="eyebrow">THE GOOD STUFF</p>
-                    <h2>Top Rated</h2>
-                </div>
-
-            </div>
-
-
-            <div class="top-rated-list">
-
-                <article class="top-rated-item">
-
-                    <span class="rank">01</span>
-
-                    <div class="top-rated-info">
-
-                        <p class="media-type">MOVIE</p>
-
-                        <h3>The Wonderful Story of Henry Sugar</h3>
-
-                    </div>
-
-                    <span class="large-rating">
-                        9.2
-                    </span>
-
-                </article>
-
-
-                <article class="top-rated-item">
-
-                    <span class="rank">02</span>
-
-                    <div class="top-rated-info">
-
-                        <p class="media-type">TV SHOW</p>
-
-                        <h3>Messiah</h3>
-
-                    </div>
-
-                    <span class="large-rating">
-                        8.7
-                    </span>
-
-                </article>
-
-
-                <article class="top-rated-item">
-
-                    <span class="rank">03</span>
-
-                    <div class="top-rated-info">
-
-                        <p class="media-type">TV SHOW</p>
-
-                        <h3>Boy Swallows Universe</h3>
-
-                    </div>
-
-                    <span class="large-rating">
-                        8.6
-                    </span>
-
-                </article>
-
-
-                <article class="top-rated-item">
-
-                    <span class="rank">04</span>
-
-                    <div class="top-rated-info">
-
-                        <p class="media-type">TV SHOW</p>
-
-                        <h3>Search Party</h3>
-
-                    </div>
-
-                    <span class="large-rating">
-                        9.0
-                    </span>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- Archive -->
-
-        <section id="archive">
-
-            <div class="archive-intro">
-
-                <p class="eyebrow">THE ARCHIVE</p>
-
-                <h2>Everything I've Consumed</h2>
-
-                <p>
-                    Movies, television, books, games, music,
-                    YouTube, and whatever else ends up here.
-                </p>
-
-                <button type="button">
-                    Browse the Archive
-                </button>
-
-            </div>
-
         </section>
 
     </main>
 
 
-    <!-- =========================
-         FOOTER
-         ========================= -->
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
 
-    <footer>
+            <p>
+                Dom's Media Archive
+            </p>
 
-        <p>
-            Dom's Media Archive
-        </p>
-
-        <p>
-            Built for remembering what I thought.
-        </p>
-
+        </div>
     </footer>
 
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
 </body>
 </html>
