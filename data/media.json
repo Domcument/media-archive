@@ -2,73 +2,163 @@
   {
     "id": "boy-swallows-universe",
     "title": "Boy Swallows Universe",
-    "featured": false,
     "type": "TV",
-    "rating": 8.6,
-    "service": "Netflix",
-    "status": "Completed",
-    "description": "Two brothers navigate a brutal childhood filled with family problems, addiction, violence, and strange possibilities. A surprisingly emotional story about good, evil, family, and the choices people make.",
-    "themes": ["Family", "Addiction", "Good vs. Evil", "Trauma"],
-    "recommendation": "Highly Recommend"
+    "featured": false,
+
+    "metadata": {
+      "year": null,
+      "creator": null,
+      "externalId": null,
+      "image": null
+    },
+
+    "personal": {
+      "rating": 8.6,
+      "service": "Netflix",
+      "status": "Completed",
+      "description": "Two brothers navigate a brutal childhood filled with family problems, addiction, violence, and strange possibilities. A surprisingly emotional story about good, evil, family, and the choices people make.",
+      "themes": [
+        "Family",
+        "Addiction",
+        "Good vs. Evil",
+        "Trauma"
+      ],
+      "recommendation": "Highly Recommend"
+    }
   },
   {
     "id": "wonderful-story-henry-sugar",
     "title": "The Wonderful Story of Henry Sugar",
-    "featured": true,
     "type": "Movie",
-    "rating": 9.2,
-    "service": "Netflix",
-    "status": "Completed",
-    "description": "A ridiculously charming and visually distinctive Wes Anderson story about a wealthy man who discovers a way to see without using his eyes.",
-    "themes": ["Greed", "Generosity", "Fate", "Selflessness"],
-    "recommendation": "Highly Recommend"
+    "featured": true,
+
+    "metadata": {
+      "year": null,
+      "creator": null,
+      "externalId": null,
+      "image": null
+    },
+
+    "personal": {
+      "rating": 9.2,
+      "service": "Netflix",
+      "status": "Completed",
+      "description": "A ridiculously charming and visually distinctive Wes Anderson story about a wealthy man who discovers a way to see without using his eyes.",
+      "themes": [
+        "Greed",
+        "Generosity",
+        "Fate",
+        "Selflessness"
+      ],
+      "recommendation": "Highly Recommend"
+    }
   },
   {
     "id": "lovesick",
     "title": "Lovesick",
-    "featured": false,
     "type": "TV",
-    "rating": 8.0,
-    "service": "Netflix",
-    "status": "Completed",
-    "description": "A funny and surprisingly thoughtful romantic comedy that uses its relationships to explore expectations around dating, marriage, careers, family, and gender.",
-    "themes": ["Romance", "Friendship", "Growing Up", "Expectations"],
-    "recommendation": "Recommend"
+    "featured": false,
+
+    "metadata": {
+      "year": null,
+      "creator": null,
+      "externalId": null,
+      "image": null
+    },
+
+    "personal": {
+      "rating": 8.0,
+      "service": "Netflix",
+      "status": "Completed",
+      "description": "A funny and surprisingly thoughtful romantic comedy that uses its relationships to explore expectations around dating, marriage, careers, family, and gender.",
+      "themes": [
+        "Romance",
+        "Friendship",
+        "Growing Up",
+        "Expectations"
+      ],
+      "recommendation": "Recommend"
+    }
   },
   {
     "id": "messiah",
     "title": "Messiah",
-    "featured": false,
     "type": "TV",
-    "rating": 8.7,
-    "service": "Netflix",
-    "status": "Completed",
-    "description": "A mysterious man claims to be a divine figure while intelligence agencies and ordinary people struggle to determine who he really is.",
-    "themes": ["Mystery", "Religion", "Faith", "Conspiracy"],
-    "recommendation": "Highly Recommend"
+    "featured": false,
+
+    "metadata": {
+      "year": null,
+      "creator": null,
+      "externalId": null,
+      "image": null
+    },
+
+    "personal": {
+      "rating": 8.7,
+      "service": "Netflix",
+      "status": "Completed",
+      "description": "A mysterious man claims to be a divine figure while intelligence agencies and ordinary people struggle to determine who he really is.",
+      "themes": [
+        "Mystery",
+        "Religion",
+        "Faith",
+        "Conspiracy"
+      ],
+      "recommendation": "Highly Recommend"
+    }
   },
   {
     "id": "search-party",
     "title": "Search Party",
-    "featured": false,
     "type": "TV",
-    "rating": 9.0,
-    "service": "Max",
-    "status": "Completed",
-    "description": "A darkly funny mystery about a group of friends whose lives spiral into increasingly bizarre and dangerous situations.",
-    "themes": ["Mystery", "Dark Comedy", "Friendship", "Identity"],
-    "recommendation": "Highly Recommend"
+    "featured": false,
+
+    "metadata": {
+      "year": null,
+      "creator": null,
+      "externalId": null,
+      "image": null
+    },
+
+    "personal": {
+      "rating": 9.0,
+      "service": "Max",
+      "status": "Completed",
+      "description": "A darkly funny mystery about a group of friends whose lives spiral into increasingly bizarre and dangerous situations.",
+      "themes": [
+        "Mystery",
+        "Dark Comedy",
+        "Friendship",
+        "Identity"
+      ],
+      "recommendation": "Highly Recommend"
+    }
   },
   {
     "id": "man-in-high-castle",
     "title": "The Man in the High Castle",
-    "featured": false,
     "type": "TV",
-    "rating": 6.8,
-    "service": "Prime Video",
-    "status": "Dropped",
-    "description": "A fascinating alternate-history premise where the Axis powers won World War II. The early mystery and setting were excellent, but later episodes became increasingly frustrating.",
-    "themes": ["Alternate History", "Politics", "Resistance", "Mystery"],
-    "recommendation": "Mixed"
+    "featured": false,
+
+    "metadata": {
+      "year": null,
+      "creator": null,
+      "externalId": null,
+      "image": null
+    },
+
+    "personal": {
+      "rating": 6.8,
+      "service": "Prime Video",
+      "status": "Dropped",
+      "description": "A fascinating alternate-history premise where the Axis powers won World War II. The early mystery and setting were excellent, but later episodes became increasingly frustrating.",
+      "themes": [
+        "Alternate History",
+        "Politics",
+        "Resistance",
+        "Mystery"
+      ],
+      "recommendation": "Mixed"
+    }
   }
 ]
