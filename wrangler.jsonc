@@ -6,5 +6,9 @@
   "assets": {
     "directory": ".",
     "binding": "ASSETS"
-  }
+  },
+
+  "secrets": [
+    "TMDB_TOKEN"
+  ]
 }
