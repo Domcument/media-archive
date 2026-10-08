@@ -33,7 +33,11 @@ function renderFeatured(media) {
   container.innerHTML = `
     <div class="featured-card">
       <div class="featured-art">
-        <span>${escapeHTML(featured.type)}</span>
+    ${
+    featured.metadata.image
+      ? `<img src="${escapeHTML(featured.metadata.image)}" alt="${escapeHTML(featured.title)} poster">`
+      : `<span>${escapeHTML(featured.type)}</span>`
+    }
       </div>
 
       <div class="featured-content">
@@ -111,7 +115,11 @@ function createMediaCard(item) {
     <article class="media-card">
 
       <div class="media-placeholder">
-        <span>${escapeHTML(item.type)}</span>
+        ${
+          item.metadata.image
+            ? `<img src="${escapeHTML(item.metadata.image)}" alt="${escapeHTML(item.title)} poster">`
+            : `<span>${escapeHTML(item.type)}</span>`
+          }
       </div>
 
       <div class="media-card-content">
