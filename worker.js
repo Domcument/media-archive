@@ -36,13 +36,10 @@ export default {
       });
 
       if (!response.ok) {
-        const errorText = await response.text();
-
         return new Response(
           JSON.stringify({
             error: "TMDB request failed.",
-            status: response.status,
-            details: errorText
+            status: response.status
           }),
           {
             status: response.status,
@@ -55,8 +52,34 @@ export default {
 
       const data = await response.json();
 
+      // Convert TMDB's response into the format our archive understands
+      const results = data.results
+        .filter(
+          item =>
+            item.media_type === "movie" ||
+            item.media_type === "tv"
+        )
+        .slice(0, 10)
+        .map(item => ({
+          externalId: item.id,
+          externalSource: "tmdb",
+          title: item.title || item.name,
+          type: item.media_type === "movie" ? "Movie" : "TV",
+          year: (
+            item.release_date ||
+            item.first_air_date ||
+            ""
+          ).slice(0, 4) || null,
+          description: item.overview || "",
+          image: item.poster_path
+            ? `https://image.tmdb.org/t/p/w500${item.poster_path}`
+            : null
+        }));
+
       return new Response(
-        JSON.stringify(data),
+        JSON.stringify({
+          results
+        }),
         {
           headers: {
             "Content-Type": "application/json",
