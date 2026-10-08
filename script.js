@@ -8,7 +8,7 @@ async function loadMedia() {
 
     const media = await response.json();
 
-    renderCurrently(media);
+    renderFeatured(media);
     renderRecently(media);
     renderTopRated(media);
 
@@ -148,6 +148,70 @@ function escapeHTML(value) {
 }
 
 
+/* -----------------------------
+   FEATURED MEDIA
+----------------------------- */
+
+function renderFeatured(media) {
+  const container = document.getElementById("featured-container");
+
+  if (!container) return;
+
+  const featured = media.find(item => item.featured === true);
+
+  if (!featured) {
+    container.innerHTML = "";
+    return;
+  }
+
+  container.innerHTML = `
+    <article class="featured-card">
+
+      <div class="featured-art">
+        <span>${escapeHTML(featured.type)}</span>
+      </div>
+
+      <div class="featured-content">
+
+        <p class="eyebrow">
+          Featured
+        </p>
+
+        <h3>
+          ${escapeHTML(featured.title)}
+        </h3>
+
+        <div class="featured-meta">
+          <span class="featured-rating">
+            ${featured.rating.toFixed(1)}
+          </span>
+
+          <span>·</span>
+
+          <span>
+            ${escapeHTML(featured.type)}
+          </span>
+
+          <span>·</span>
+
+          <span>
+            ${escapeHTML(featured.service)}
+          </span>
+        </div>
+
+        <p class="featured-description">
+          ${escapeHTML(featured.description)}
+        </p>
+
+        <p class="featured-recommendation">
+          ${escapeHTML(featured.recommendation)}
+        </p>
+
+      </div>
+
+    </article>
+  `;
+}
 /* -----------------------------
    START THE SITE
 ----------------------------- */
