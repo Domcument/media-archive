@@ -18,140 +18,6 @@ async function loadMedia() {
 }
 
 
-/* -----------------------------
-   CURRENTLY CONSUMING
------------------------------ */
-
-function renderCurrently(media) {
-  const container = document.getElementById("currently-grid");
-
-  if (!container) return;
-
-  const currently = media.filter(item =>
-    item.status === "Currently Watching" ||
-    item.status === "Rewatching"
-  );
-
-  if (currently.length === 0) {
-    container.innerHTML = `
-      <p class="empty-message">
-        Nothing currently consuming.
-      </p>
-    `;
-    return;
-  }
-
-  container.innerHTML = currently
-    .map(item => createMediaCard(item))
-    .join("");
-}
-
-
-/* -----------------------------
-   RECENTLY FINISHED
------------------------------ */
-
-function renderRecently(media) {
-  const container = document.getElementById("recently-grid");
-
-  if (!container) return;
-
-  const completed = media
-    .filter(item => item.status === "Completed")
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 3);
-
-  container.innerHTML = completed
-    .map(item => createMediaCard(item))
-    .join("");
-}
-
-
-/* -----------------------------
-   TOP RATED
------------------------------ */
-
-function renderTopRated(media) {
-  const container = document.getElementById("top-rated-list");
-
-  if (!container) return;
-
-  const topRated = [...media]
-    .filter(item => typeof item.rating === "number")
-    .sort((a, b) => b.rating - a.rating)
-    .slice(0, 5);
-
-  container.innerHTML = topRated
-    .map((item, index) => `
-      <div class="top-rated-item">
-        <span class="rank">${index + 1}</span>
-
-        <div class="top-rated-info">
-          <strong>${escapeHTML(item.title)}</strong>
-          <span>${escapeHTML(item.type)} · ${escapeHTML(item.service)}</span>
-        </div>
-
-        <span class="top-rated-score">
-          ${item.rating.toFixed(1)}
-        </span>
-      </div>
-    `)
-    .join("");
-}
-
-
-/* -----------------------------
-   MEDIA CARD
------------------------------ */
-
-function createMediaCard(item) {
-  return `
-    <article class="media-card">
-
-      <div class="media-placeholder">
-        <span>${escapeHTML(item.type)}</span>
-      </div>
-
-      <div class="media-card-content">
-
-        <div class="media-card-header">
-          <h3>${escapeHTML(item.title)}</h3>
-          <span class="rating">${item.rating.toFixed(1)}</span>
-        </div>
-
-        <p class="media-meta">
-          ${escapeHTML(item.service)}
-        </p>
-
-        <p class="media-description">
-          ${escapeHTML(item.description)}
-        </p>
-
-      </div>
-
-    </article>
-  `;
-}
-
-
-/* -----------------------------
-   SECURITY
------------------------------ */
-
-function escapeHTML(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-
-/* -----------------------------
-   FEATURED MEDIA
------------------------------ */
-
 function renderFeatured(media) {
   const container = document.getElementById("featured-container");
 
@@ -165,55 +31,113 @@ function renderFeatured(media) {
   }
 
   container.innerHTML = `
-    <article class="featured-card">
-
+    <div class="featured-card">
       <div class="featured-art">
         <span>${escapeHTML(featured.type)}</span>
       </div>
 
       <div class="featured-content">
+        <p class="eyebrow">Featured</p>
 
-        <p class="eyebrow">
-          Featured
-        </p>
-
-        <h3>
-          ${escapeHTML(featured.title)}
-        </h3>
+        <h3>${escapeHTML(featured.title)}</h3>
 
         <div class="featured-meta">
-          <span class="featured-rating">
-            ${featured.rating.toFixed(1)}
-          </span>
+          <span class="rating">${featured.personal.rating}</span>
+          <span>${escapeHTML(featured.type)}</span>
+          <span>${escapeHTML(featured.personal.service)}</span>
+        </div>
 
-          <span>·</span>
+        <p>${escapeHTML(featured.personal.description)}</p>
 
+        <span class="recommendation">
+          ${escapeHTML(featured.personal.recommendation)}
+        </span>
+      </div>
+    </div>
+  `;
+}
+
+
+function renderRecently(media) {
+  const container = document.getElementById("recently-grid");
+
+  if (!container) return;
+
+  const recentlyFinished = media
+    .filter(item => item.personal.status === "Completed")
+    .sort((a, b) => b.personal.rating - a.personal.rating)
+    .slice(0, 3);
+
+  container.innerHTML = recentlyFinished
+    .map(item => createMediaCard(item))
+    .join("");
+}
+
+
+function renderTopRated(media) {
+  const container = document.getElementById("top-rated-list");
+
+  if (!container) return;
+
+  const topRated = media
+    .filter(item => typeof item.personal.rating === "number")
+    .sort((a, b) => b.personal.rating - a.personal.rating)
+    .slice(0, 5);
+
+  container.innerHTML = topRated
+    .map((item, index) => `
+      <div class="top-rated-item">
+        <span class="rank">${index + 1}</span>
+
+        <div class="top-rated-info">
+          <h3>${escapeHTML(item.title)}</h3>
           <span>
-            ${escapeHTML(featured.type)}
-          </span>
-
-          <span>·</span>
-
-          <span>
-            ${escapeHTML(featured.service)}
+            ${escapeHTML(item.type)} ·
+            ${escapeHTML(item.personal.service)}
           </span>
         </div>
 
-        <p class="featured-description">
-          ${escapeHTML(featured.description)}
-        </p>
+        <span class="top-rated-score">
+          ${item.personal.rating}
+        </span>
+      </div>
+    `)
+    .join("");
+}
 
-        <p class="featured-recommendation">
-          ${escapeHTML(featured.recommendation)}
-        </p>
 
+function createMediaCard(item) {
+  return `
+    <article class="media-card">
+
+      <div class="media-placeholder">
+        <span>${escapeHTML(item.type)}</span>
+      </div>
+
+      <div class="media-card-content">
+        <h3>${escapeHTML(item.title)}</h3>
+
+        <div class="media-meta">
+          <span class="rating">${item.personal.rating}</span>
+          <span>${escapeHTML(item.personal.service)}</span>
+        </div>
+
+        <p>${escapeHTML(item.personal.description)}</p>
       </div>
 
     </article>
   `;
 }
-/* -----------------------------
-   START THE SITE
------------------------------ */
+
+
+function escapeHTML(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 
 loadMedia();
